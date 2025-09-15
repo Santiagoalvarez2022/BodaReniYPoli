@@ -14,10 +14,10 @@ export const getGuestList = async() =>{
 
 
 export const confirmGuest = async(id) =>{
-   id = id-1
    
     try {
-        const data = await axios.patch(`https://api.sheetbest.com/sheets/e8905961-df11-4373-aecb-b8811ebff100/${id}`,{Confirmo: 'confirmo'})
+        const data = await axios.patch(`https://api.sheetbest.com/sheets/e8905961-df11-4373-aecb-b8811ebff100/${id}`,{Confirmo: 'confirmo'});
+
         return data
     } catch (error) {
         console.log("Error en la modificacion de lista de invitados ", {error:error.message})

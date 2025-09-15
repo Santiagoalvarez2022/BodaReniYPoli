@@ -39,7 +39,7 @@ const App = () => {
           <WeddingDetail
             event={"Fiesta"}
             date={"Viernes 28 de Noviembre - 19:45hs"}
-            address={"El concerro, entre El Palenque y Exaltacion de la Cruz, CABA"}
+            address={"El concerro, entre El Palenque y Exaltacion de la Cruz, Buenos Aires"}
             link={"https://maps.app.goo.gl/2nBuGpXNnerzN1t69"}
             logo={copaFiesta}
 

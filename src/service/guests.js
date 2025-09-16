@@ -16,6 +16,8 @@ export const getGuestList = async() =>{
 export const confirmGuest = async(id) =>{
    
     try {
+        console.log(id);
+        
         const data = await axios.patch(`https://api.sheetbest.com/sheets/e8905961-df11-4373-aecb-b8811ebff100/${id}`,{Confirmo: 'confirmo'});
 
         return data

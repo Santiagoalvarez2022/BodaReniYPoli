@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const getGuestList = async() =>{
     try {
-    const response = await axios(`${'https://api.sheetbest.com/sheets/e8905961-df11-4373-aecb-b8811ebff100'}?_raw=1`);
+    const response = await axios(`${'https://api.sheetbest.com/sheets/5154d3fa-534c-4f07-b111-75bb3a79955f'}?_raw=1`);
 
     return response;
 
@@ -18,7 +18,7 @@ export const confirmGuest = async(id) =>{
     try {
         console.log(id);
         
-        const data = await axios.patch(`https://api.sheetbest.com/sheets/e8905961-df11-4373-aecb-b8811ebff100/${id}`,{Confirmo: 'confirmo'});
+        const data = await axios.patch(`https://api.sheetbest.com/sheets/5154d3fa-534c-4f07-b111-75bb3a79955f/${id}`,{Confirmo: 'confirmo'});
 
         return data
     } catch (error) {

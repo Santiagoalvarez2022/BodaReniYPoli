@@ -1,16 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getGuestList, confirmGuest } from '../../service/guests.js';
+import { useState } from 'react';
+import { confirmGuest } from '../../service/guests.js';
 import Modal from './Modal.jsx';
 import Loader from '../loader/Loader.jsx';
 import './FormGuest.css';
 
-export default function FormGuest() {
+// La lista de invitados se carga en App y llega por props (guests).
+// refreshGuests vuelve a pedirla a la API tras confirmar una asistencia.
+export default function FormGuest({ guests = [], refreshGuests }) {
     const navigate = useNavigate();
     const [options,setOptions] = useState([]);
     const [input,setInput] = useState('');
-    // lista de nombre traidos desde google sheets
-    const [Guests,setGuets] = useState([]);
     // estados para mostrar options
     const [showOptions, setShhowOptions] = useState(false);
     //estado para enviar solo cuando le nombre este elegido y sea correcto
@@ -20,28 +20,13 @@ export default function FormGuest() {
     const [guestSelected, setGuest] = useState();
     const [modal, setModal] = useState(false);
 
-    const handlerGuestList = async() =>{
-      setLoader(true);
-      try {
-        const response = await getGuestList();
-
-        if (response.status === 200) {
-            setLoader(false);
-            setGuets(response.data);
-        }
-      } catch (error) {
-        // navigate('/error')
-        console.log(error, 'Error al pedir la lista de invitados');
-      }
-    };
-
     const handlerInput = ({target}) =>{
       let {value} = target;
       setSelected(false)
       setGuest()
       setInput(value);
       if(value){
-        let list_options = Guests.filter((guest)=> guest.Nombre.toLowerCase().includes(value.toLowerCase()));
+        let list_options = guests.filter((guest)=> guest.nombre.toLowerCase().includes(value.toLowerCase()));
         setOptions(list_options)
         setShhowOptions(true)
       }
@@ -52,9 +37,9 @@ export default function FormGuest() {
     };
 
     const selecteName = (option) =>{
-      const findName = Guests.findIndex(o=> o.Nombre === option.Nombre)
+      const findName = guests.findIndex(o=> o.nombre === option.nombre)
       if (findName !== -1) {
-        setInput(option.Nombre);
+        setInput(option.nombre);
         setSelected(true);
         setShhowOptions(false);
         setGuest(option);
@@ -63,7 +48,7 @@ export default function FormGuest() {
 
     const confirmInvitation = async() =>{
       try {
-        const response = await confirmGuest(guestSelected.Id);
+        const response = await confirmGuest(guestSelected.id);
 
         setLoader(true);
         setSelected(false);
@@ -84,12 +69,8 @@ export default function FormGuest() {
 
     const closeModal = () =>{
       setModal(false);
-      handlerGuestList();
+      if (refreshGuests) refreshGuests();
     };
-
-    useEffect(()=>{
-      handlerGuestList();
-    },[]);
 
     return (
     <>
@@ -121,13 +102,13 @@ export default function FormGuest() {
                 && options.length > 0
                 && (
                 options.map((option,index)=>{
-                if (option.Confirmo.toLocaleLowerCase() === "no") {
+                if (option.confirmo.toLocaleLowerCase() === "no") {
                   return <li
                     className="optionNames"
                     key={index}
                     onClick={() => selecteName(option)}
                   >
-                  {option.Nombre}
+                  {option.nombre}
                 </li>
                 }}))
             }

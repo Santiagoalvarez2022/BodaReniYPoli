@@ -1,20 +1,49 @@
+import { useEffect, useState } from 'react';
 import { InformationWedding, PrincipalPhoto,CountDown } from './components';
 import WeddingDetail from './components/weddingDetail/WeddingDetail';
 import Banner from './components/banner/Banner';
 import Label from './components/label/Label';
 import FormGuest from './components/formGuest/FormGuest';
+import Envelope from './components/envelope/Envelope';
+import Loader from './components/loader/Loader';
+import { getGuestList } from './service/guests.js';
 import flowersDetail from './assets/FlowersDetailWedding.svg'
 import flowersCornerUp from './assets/flowersCornerUp.svg'
 import flowersCornerDown from './assets/flowersCornerDown.svg'
 import copaFiesta from './assets/copas.png'
 import rings from './assets/rings.png'
-import video from './assets/video.mp4'
 import temple from './assets/temple.png'
 import './App.css';
 
 const App = () => {
+  // Lista de invitados se carga acá para coordinar la secuencia:
+  // Loader (mientras carga la API) -> Envelope (recién al terminar) -> animacion.
+  const [guests, setGuests] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showEnvelope, setShowEnvelope] = useState(false);
+
+  const fetchGuests = async () => {
+    try {
+      const response = await getGuestList();
+      if (response?.status === 200) setGuests(response.data);
+    } catch (error) {
+      console.log('Error al cargar la lista de invitados', error);
+    }
+  };
+
+  useEffect(() => {
+    const init = async () => {
+      await fetchGuests();
+      setLoading(false);
+      setShowEnvelope(true);
+    };
+    init();
+  }, []);
+
   return (
     <div className='flex flex-col items-center'>
+      {loading && <Loader />}
+      {showEnvelope && <Envelope />}
       <PrincipalPhoto />
       <div className='shadow-white'/>
       <InformationWedding />
@@ -76,7 +105,7 @@ const App = () => {
               Nos encantaría contar con su presencia en este día tan especial. 
               Por favor, confirmen su asistencia antes del 10 de Noviembre
             </p>
-            <FormGuest />
+            <FormGuest guests={guests} refreshGuests={fetchGuests} />
             <br />
             <p className="font-Inria text-base text-center mx-4  paragraph">
               Tu presencia es nuestro mayor regalo, pero si querés acompañarnos 

@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import sheet1 from '../../assets/sheet_1.png';
 import sheet2 from '../../assets/sheet_2.png';
 import stamp from '../../assets/stamp.png';
-import './Envelope.css';
+import './envelope.css';
 
-// Tiempos (ms) — secuencia: stamp aparece -> stamp desaparece -> se abren las puertas
-const STAMP_IN = 50;       // micro-delay para disparar la animacion de entrada del stamp
-const STAMP_OUT = 1500;    // momento en que el stamp empieza a desaparecer
-const STAMP_ANIM = 500;    // duracion del fade del stamp (coincide con la transition CSS)
-const OPEN_DELAY = 2100;   // las puertas abren recien cuando el stamp ya se fue
-const DOORS_ANIM = 1200;   // debe coincidir con la transition del CSS
+const STAMP_IN = 50;
+const STAMP_OUT = 1500;
+const STAMP_ANIM = 500;
+const OPEN_DELAY = 2100;
+const DOORS_ANIM = 1200;
 
 export default function Envelope() {
   const [stampShown, setStampShown] = useState(false);
@@ -41,22 +40,19 @@ export default function Envelope() {
   if (hidden) return null;
 
   return (
-    <div className={`envelope ${open ? 'envelope--open' : ''}`} aria-hidden="true">
-      {/* Hoja izquierda */}
+    <div className={`envelope ${open ? 'envelope-open' : ''}`} aria-hidden="true">
       <div
-        className="envelope__door envelope__door--left"
+        className="envelope-door envelope-door-left"
         style={{ backgroundImage: `url(${sheet1})` }}
       />
-      {/* Hoja derecha */}
       <div
-        className="envelope__door envelope__door--right"
+        className="envelope-door envelope-door-right"
         style={{ backgroundImage: `url(${sheet2})` }}
       />
 
-      {/* Stamp: elemento independiente sobre la juntura del sobre */}
       {!stampGone && (
         <div
-          className={`envelope__stamp ${stampShown ? 'is-in' : ''} ${stampHidden ? 'is-out' : ''}`}
+          className={`envelope-stamp ${stampShown ? 'is-in' : ''} ${stampHidden ? 'is-out' : ''}`}
           style={{ backgroundImage: `url(${stamp})` }}
         />
       )}

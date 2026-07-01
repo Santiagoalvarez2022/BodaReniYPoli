@@ -3,19 +3,14 @@ import { useState } from 'react';
 import { confirmGuest } from '../../service/guests.js';
 import Modal from './Modal.jsx';
 import Loader from '../loader/Loader.jsx';
-import './FormGuest.css';
+import './form-guest.css';
 
-// La lista de invitados se carga en App y llega por props (guests).
-// refreshGuests vuelve a pedirla a la API tras confirmar una asistencia.
 export default function FormGuest({ guests = [], refreshGuests }) {
     const navigate = useNavigate();
     const [options,setOptions] = useState([]);
     const [input,setInput] = useState('');
-    // estados para mostrar options
     const [showOptions, setShhowOptions] = useState(false);
-    //estado para enviar solo cuando le nombre este elegido y sea correcto
     const [selected,setSelected] = useState(false);
-    //informacion del invitado seleccionado
     const [loader,setLoader] = useState(false);
     const [guestSelected, setGuest] = useState();
     const [modal, setModal] = useState(false);
@@ -86,17 +81,17 @@ export default function FormGuest({ guests = [], refreshGuests }) {
         />
       }
 
-      <form className="guestForm" onSubmit={(e)=>e.preventDefault()}>
+      <form className="guest-form" onSubmit={(e)=>e.preventDefault()}>
           <input
             placeholder='Nombre y Apellido'
-            className='inptGuest bg-[#B6D9E8] text-base text-black px-4 py-1 rounded-xl font-Inria shadow-md '
+            className='input-guest bg-[#B6D9E8] text-base text-black px-4 py-1 rounded-xl font-inria shadow-md '
             value={input}
             onChange={handlerInput}
             autoFocus={false}
             type="text"
           />
 
-          <ul className="optionsContainer">
+          <ul className="options-container">
             {
               showOptions
                 && options.length > 0
@@ -104,7 +99,7 @@ export default function FormGuest({ guests = [], refreshGuests }) {
                 options.map((option,index)=>{
                 if (option.confirmo.toLocaleLowerCase() === "no") {
                   return <li
-                    className="optionNames"
+                    className="option-names"
                     key={index}
                     onClick={() => selecteName(option)}
                   >
@@ -115,14 +110,14 @@ export default function FormGuest({ guests = [], refreshGuests }) {
 
           {
             selected
-            && <p className="guestSelected mb-2">Invitado seleccionado <br /> "{input}"</p>
+            && <p className="guest-selected mb-2">Invitado seleccionado <br /> "{input}"</p>
           }
 
           {
             selected
             && <button
             onClick={confirmInvitation}
-            className="acptInvitation"
+            className="accept-invitation"
             > Confirmar </button>
           }
 

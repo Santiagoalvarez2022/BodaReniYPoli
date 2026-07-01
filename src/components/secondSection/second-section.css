@@ -1,0 +1,11 @@
+.second-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}

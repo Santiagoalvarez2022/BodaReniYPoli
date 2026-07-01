@@ -1,0 +1,52 @@
+.wedding-container {
+  text-align: center;
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+
+.flowers {
+  position: relative;
+  background-image: url('../../assets/flowers.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  width: 100%;
+  height: 180px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.flowers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.973) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.date{
+  background-image: url('../../assets/dateFlowers.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60px;
+  width: 100px;
+}
+
+.wedding-info {
+  margin-top: -40px;
+}
+
+.names-title {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  margin: 0;
+}

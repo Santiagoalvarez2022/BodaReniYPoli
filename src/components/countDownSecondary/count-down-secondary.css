@@ -1,0 +1,57 @@
+.countdown-secondary-page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.countdown-secondary-meter{
+    display: flex;
+    gap: .9rem;
+    text-align: center;
+}
+
+.countdown-secondary-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.countdown-secondary-count{
+  position: relative;
+  width: 92px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  filter: drop-shadow(0 .15rem .2rem rgba(0, 0, 0, .35));
+}
+
+.countdown-secondary-count::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .05) 60%);
+}
+
+.countdown-secondary-number{
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding-bottom: .4rem;
+}
+
+.countdown-secondary-label{
+  font-family: "Oooh Baby", cursive;
+  font-size: 1rem;
+  color: var(--color-petrol);
+  font-weight: 400;
+}

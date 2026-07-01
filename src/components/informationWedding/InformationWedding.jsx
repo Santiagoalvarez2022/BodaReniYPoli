@@ -1,14 +1,12 @@
-import './informationWeddings.css';
+import './information-wedding.css';
 
 const InformationWedding = () => {
   return (
     <div className="wedding-container">
-      {/* Flores arriba */}
       <div className="flowers"></div>
 
-      {/* Contenido */}
       <div className="wedding-info text-blueP">
-        <h1 className="namesTitle font-Marcellus">Renata & Pablo</h1>
+        <h1 className="names-title font-marcellus">Renata & Pablo</h1>
         <div className='flex justify-center items-center'>
           <div className='date' />
         </div>

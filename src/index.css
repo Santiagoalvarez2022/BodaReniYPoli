@@ -6,7 +6,12 @@
 
 @theme{
     --color-blueP : oklch(0.4365 0.1709 259.21);
-    --font-Marcellus:  "Marcellus SC", serif;
-    --font-Inria: "Inria Serif", serif;
-    --font-Obaby: "Oooh Baby", cursive;
+    --color-petrol: #002F37;
+    --color-content: #333528;
+    --font-marcellus: "Marcellus SC", serif;
+    --font-inria: "Inria Serif", serif;
+    --font-obaby: "Oooh Baby", cursive;
+    --font-baskerville: "Libre Baskerville", serif;
+    --font-playfair: "Playfair", serif;
+    --font-tangerine: "Tangerine", cursive;
 }

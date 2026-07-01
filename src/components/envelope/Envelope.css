@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.envelope__door {
+.envelope-door {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,57 +15,52 @@
   will-change: transform;
 }
 
-.envelope__door--left {
+.envelope-door-left {
   width: 40%;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.35);
 }
 
-.envelope__door--right {
+.envelope-door-right {
   width: 60%;
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.35);
 }
 
-/* Stamp / sello — elemento independiente sobre la juntura de las hojas */
-.envelope__stamp {
+.envelope-stamp {
   position: absolute;
   top: 50%;
-  left: 40%; /* juntura: la hoja izquierda mide 40% */
+  left: 40%;
   width: 160px;
   height: 160px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  z-index: 2; /* por encima de las hojas */
+  z-index: 2;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.6);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
 }
 
-/* Entrada del stamp */
-.envelope__stamp.is-in {
+.envelope-stamp.is-in {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Salida del stamp (prevalece sobre is-in) */
-.envelope__stamp.is-out {
+.envelope-stamp.is-out {
   opacity: 0;
   transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Apertura tipo puertas: cada hoja se desliza hacia su costado */
-.envelope--open .envelope__door--left {
+.envelope-open .envelope-door-left {
   transform: translateX(-100%);
 }
 
-.envelope--open .envelope__door--right {
+.envelope-open .envelope-door-right {
   transform: translateX(100%);
 }
 
-/* Accesibilidad: si el usuario prefiere menos movimiento, no animamos */
 @media (prefers-reduced-motion: reduce) {
-  .envelope__door {
+  .envelope-door {
     transition: none;
   }
 }

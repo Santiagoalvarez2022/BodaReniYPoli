@@ -8,7 +8,7 @@ const WeddingDetail = ({
   const seePlace = () =>  window.open(link, "_blank")
 
   return (
-    <section className="my-8 w-full font-Inria">
+    <section className="my-8 w-full font-inria">
       <div className="grid grid-cols-[60px_1fr] gap-2 items-start">
         <div className="w-16 h-16 rounded-full flex items-center justify-center">
             <img

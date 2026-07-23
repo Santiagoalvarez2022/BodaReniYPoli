@@ -37,11 +37,12 @@ const App = () => {
 
   return (
     <div className='app-background flex flex-col items-center'>
-      {/* {loading && <Loader />}
-      {showEnvelope && <Envelope />} */}
+      {loading && <Loader />}
+      {showEnvelope && <Envelope />}
       <Cover />
       <SecondSection />
       <ThirdSection />
+      {console.log(guests)}
     </div>
   )
 }

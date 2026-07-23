@@ -4,37 +4,40 @@ const WeddingDetailSecondary = ({
   address,
   logo,
   link,
-  moreInfo = false
+  connector = true,
+  connectorGap = false,
+  moreInfo = false,
 }) => {
-  const seePlace = () =>  window.open(link, "_blank")
+  const line = connector
+    ? `before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:w-px before:h-8 before:bg-petrol ${connectorGap ? 'before:mt-[10px]' : ''}`
+    : "";
 
   return (
-    <section className="my-8 w-full">
+    <section className="w-full my-9">
       <div className="grid grid-cols-[60px_1fr] gap-2 items-start">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center">
+        <div className={`relative w-16 h-16 rounded-full flex items-center justify-center ${line}`}>
             <img
               src={logo}
               alt="Logo"
               className="w-15 h-15 object-contain"
             />
         </div>
-
-        <div className="flex flex-col ">
-          <h3 className="text-5xl text-petrol font-tangerine leading-none">
-            {event}
-          </h3>
-          <p className="text-sm font-baskerville text-content">{date}</p>
-          <p className="text-sm font-baskerville text-content">{address}</p>
-          {moreInfo && (
-            <div className="mt-3">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <p className="text-4xl font-bold text-petrol font-tangerine leading-none">
+              {event}
+            </p>
+            {moreInfo && (
               <button
-                onClick={seePlace}
-                className="bg-petrol text-[#EDE7D9] font-playfair uppercase text-sm tracking-wide px-6 py-3 rounded-md"
+                onClick={() => window.open(link, "_blank")}
+                className="bg-petrol text-sand font-playfair text-xs tracking-wide rounded-full p-1 px-2 shadow"
               >
-                Click aquí para más info
+                Mas info
               </button>
-            </div>
-          )}
+            )}
+          </div>
+          <p className="text-sm font-baskerville text-content ps-1">{date}</p>
+          <p className="text-sm font-baskerville text-content ps-1">{address}</p>
         </div>
       </div>
     </section>

@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import couple from '../../assets/coupleWebp.webp';
+import timer_pic_1 from '../../assets/timer_pic_1.svg';
+import timer_pic_2 from '../../assets/timer_pic_2.svg';
+import timer_pic_3 from '../../assets/timer_pic_3.svg';
+
 import "./count-down-secondary.css";
 
 const CountDownSecondary = () => {
-    const targetDate = new Date('2025-11-28T11:00:00Z').getTime();
+    const targetDate = new Date('2026-11-28T11:30:00Z').getTime();
 
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
@@ -32,27 +35,28 @@ const CountDownSecondary = () => {
     };
 
     return (
-        <section className="countdown-secondary-page pt-8 pb-2">
-            <div className="countdown-secondary-meter">
-                <div className='countdown-secondary-item'>
-                    <div className="countdown-secondary-count" style={{ backgroundImage: `url(${couple})` }}>
+        <section className="countdown-secondary-page pb-2">
+            <div className="countdown-secondary-meter font-baskerville">
+                <div className='countdown-secondary-item '>
+                    <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_1})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.days)}</span>
                     </div>
-                    <span className='countdown-secondary-label'>Dias</span>
+                    {/* <span className='countdown-secondary-label'>Días</span> */}
                 </div>
                 <div className='countdown-secondary-item'>
-                    <div className="countdown-secondary-count" style={{ backgroundImage: `url(${couple})` }}>
+                    <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_2})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.hours)}</span>
                     </div>
-                    <span className='countdown-secondary-label'>Hrs</span>
+                    {/* <span className='countdown-secondary-label'>Hrs</span> */}
                 </div>
                 <div className='countdown-secondary-item'>
-                    <div className="countdown-secondary-count" style={{ backgroundImage: `url(${couple})` }}>
+                    <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_3})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.minutes)}</span>
                     </div>
-                    <span className='countdown-secondary-label'>min</span>
+                    {/* <span className='countdown-secondary-label'>Min</span> */}
                 </div>
             </div>
+           <div className="w-1/2 mx-auto border-t-2 border-petrol"></div>
         </section>
     );
 }

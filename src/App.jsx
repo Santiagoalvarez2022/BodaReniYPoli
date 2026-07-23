@@ -10,6 +10,7 @@ import Cover from './components/cover/Cover';
 import SecondSection from './components/secondSection/SecondSection';
 import { getGuestList } from './service/guests.js';
 import './app.css';
+import ThirdSection from './components/thirdSection/ThirdSection.jsx';
 
 const App = () => {
   const [guests, setGuests] = useState([]);
@@ -35,11 +36,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='app-background flex flex-col items-center'>
       {/* {loading && <Loader />}
       {showEnvelope && <Envelope />} */}
       <Cover />
       <SecondSection />
+      <ThirdSection />
     </div>
   )
 }

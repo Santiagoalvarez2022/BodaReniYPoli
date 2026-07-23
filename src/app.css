@@ -2,3 +2,8 @@
     font-size: 1.2em;
     font-weight: 400;
 }
+
+.app-background {
+  background-image: url("./assets/bgPaper.svg");
+  background-size: contain;
+}

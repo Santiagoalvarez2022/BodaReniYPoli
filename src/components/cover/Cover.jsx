@@ -1,29 +1,34 @@
-import header from '../../assets/principalPhotoHeader.png';
-import footer from '../../assets/principalPhotoFooter.png';
 import './cover.css';
 
 export default function Cover() {
   return (
     <section className="cover">
-      <img src={header} alt="" className="cover-header" />
+      <div className="img-couple-cover"></div>
+      <div className="leaves-phrase-container">
 
-      <div className="cover-photo"></div>
+        <div className='leaves-container'>
+          <div className='leaves-icon'></div>
+        </div>
 
-      <div className="cover-footer" style={{ backgroundImage: `url(${footer})` }}>
-        <div className="cover-text">
+        <div className='font-tangerine w-50 phrase-container color-petrol;'>
           <p>
             La distancia quiso ponernos a prueba, pero terminó
             convirtiéndose en parte de nuestra historia.
             Porque detrás de cada kilómetro, hubo un
-            ‘casi pierdo el cole’,
-            ‘el cole no llega más’,
-            ‘no sé qué llevar’,
-            ‘¿este finde viajás vos?’.
           </p>
+          <p>‘casi pierdo el cole’,</p>
+          <p>‘el cole no llega más’,</p>
+          <p>‘no sé qué llevar’,</p>
+          <p>‘¿este finde viajás vos?’.</p>
+          <br />
           <p>
             Y entre tantas idas y vueltas, HOY queremos
             celebrar con vos este recorrido que nos trajo hasta acá
           </p>
+        </div>
+
+        <div className='leaves-container'>
+          <div className='leaves-icon'></div>
         </div>
       </div>
     </section>

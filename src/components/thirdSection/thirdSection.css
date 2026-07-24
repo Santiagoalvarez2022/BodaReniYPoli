@@ -8,6 +8,7 @@
 .banner-photo {
     background-image: url("../../assets/photo_p3.svg");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 35vh;
 }
 

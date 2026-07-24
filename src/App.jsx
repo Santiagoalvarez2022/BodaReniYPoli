@@ -8,8 +8,9 @@ import Envelope from './components/envelope/Envelope';
 import Cover from './components/cover/Cover';
 import SecondSection from './components/secondSection/SecondSection';
 import { getGuestList } from './service/guests.js';
-import './app.css';
 import ThirdSection from './components/thirdSection/ThirdSection.jsx';
+import Confirmation from './components/confirmation/Confirmation.jsx';
+import './app.css';
 
 const App = () => {
   const [guests, setGuests] = useState([]);
@@ -38,6 +39,7 @@ const App = () => {
       <Cover />
       <SecondSection />
       <ThirdSection />
+      <Confirmation guests={guests} refreshGuests={fetchGuests} />
       {console.log(guests)}
     </div>
   )

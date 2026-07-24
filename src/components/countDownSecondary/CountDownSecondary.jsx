@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import timer_pic_1 from '../../assets/timer_pic_1.svg';
-import timer_pic_2 from '../../assets/timer_pic_2.svg';
-import timer_pic_3 from '../../assets/timer_pic_3.svg';
+import timer_pic_1 from '../../assets/timer_pic_1.png';
+import timer_pic_2 from '../../assets/timer_pic_2.png';
+import timer_pic_3 from '../../assets/timer_pic_3.png';
 
 import "./count-down-secondary.css";
 

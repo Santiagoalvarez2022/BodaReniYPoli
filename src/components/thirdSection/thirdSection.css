@@ -40,13 +40,13 @@
 }
 
 .polaroid-1 {
-    background-image: url("../../assets/polaroid-1.svg");
+    background-image: url("../../assets/polaroid-1.png");
     height: 15vh;
     min-width: 100px;
 }
 
 .polaroid-2 {
-    background-image: url("../../assets/polaroid-2.svg");
+    background-image: url("../../assets/polaroid-2.png");
     height: 18vh;
     min-width: 110px;
     

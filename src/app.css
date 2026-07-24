@@ -4,6 +4,6 @@
 }
 
 .app-background {
-  background-image: url("./assets/bgPaper.png");
+  background-image: url("./assets/bgPaper.svg");
   background-size: contain;
 }

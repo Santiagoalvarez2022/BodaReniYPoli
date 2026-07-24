@@ -6,7 +6,7 @@ import timer_pic_3 from '../../assets/timer_pic_3.png';
 import "./count-down-secondary.css";
 
 const CountDownSecondary = () => {
-    const targetDate = new Date('2026-11-28T11:30:00Z').getTime();
+    const targetDate = new Date('2026-11-13T09:30:00Z').getTime();
 
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
@@ -37,23 +37,23 @@ const CountDownSecondary = () => {
     return (
         <section className="countdown-secondary-page pb-2">
             <div className="countdown-secondary-meter font-baskerville">
-                <div className='countdown-secondary-item '>
+                <div className='countdown-secondary-item'>
                     <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_1})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.days)}</span>
                     </div>
-                    {/* <span className='countdown-secondary-label'>Días</span> */}
+                    <span className='countdown-secondary-label'>Días</span>
                 </div>
                 <div className='countdown-secondary-item'>
                     <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_2})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.hours)}</span>
                     </div>
-                    {/* <span className='countdown-secondary-label'>Hrs</span> */}
+                    <span className='countdown-secondary-label'>Horas</span>
                 </div>
                 <div className='countdown-secondary-item'>
                     <div className="countdown-secondary-count shadow-xl" style={{ backgroundImage: `url(${timer_pic_3})` }}>
                         <span className="countdown-secondary-number">{formatNumber(timeLeft.minutes)}</span>
                     </div>
-                    {/* <span className='countdown-secondary-label'>Min</span> */}
+                    <span className='countdown-secondary-label'>Min</span>
                 </div>
             </div>
            <div className="w-1/2 mx-auto border-t-2 border-petrol"></div>

@@ -37,7 +37,14 @@ const WeddingDetailSecondary = ({
             )}
           </div>
           <p className="text-sm font-baskerville text-content ps-1">{date}</p>
-          <p className="text-sm font-baskerville text-content ps-1">{address}</p>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-baskerville text-content ps-1 underline decoration-content"
+          >
+            {address}
+          </a>
         </div>
       </div>
     </section>

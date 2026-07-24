@@ -4,14 +4,14 @@ export default function Cover() {
   return (
     <section className="cover">
       <div className="img-couple-cover"></div>
-      <div className="leaves-phrase-container">
+      <div className="leaves-phrase-container ">
 
         <div className='leaves-container'>
           <div className='leaves-icon'></div>
         </div>
 
         <div className='font-tangerine w-50 phrase-container color-petrol;'>
-          <p>
+          <p className='mt-10 '>
             La distancia quiso ponernos a prueba, pero terminó
             convirtiéndose en parte de nuestra historia.
             Porque detrás de cada kilómetro, hubo un

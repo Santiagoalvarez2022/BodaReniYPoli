@@ -66,9 +66,9 @@ export default function Confirmation({ guests = [], refreshGuests }) {
       {modal && <Modal close={closeModal} />}
 
       <div className="confirmation-content">
-        <h2 className="font-tangerine text-5xl text-sand text-center">Confirma tu asistencia</h2>
+        <h2 className="font-tangerine text-5xl text-white test-start ">Confirma tu asistencia</h2>
         <div className="confirmation-divider" />
-        <p className="font-baskerville text-sand text-center mt-3">
+        <p className="font-baskerville text-sand text-center">
           Escribí tu nombre debajo para dar el <em>sí</em>
         </p>
 
@@ -77,7 +77,8 @@ export default function Confirmation({ guests = [], refreshGuests }) {
             type="text"
             value={input}
             onChange={handleInput}
-            placeholder="Nombre y Apellido"
+            disabled
+            tabIndex={-1}
             className="confirmation-input font-baskerville"
           />
           <svg className="confirmation-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

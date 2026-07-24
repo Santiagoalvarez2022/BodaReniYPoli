@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50vh;
+    margin-bottom: 10vh;
 }
 
 .banner-photo {
@@ -20,7 +20,7 @@
 }
 
 .text-msg {
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 700;
     line-height: .9;
 }
@@ -34,6 +34,8 @@
 }
 
 .polaroid {
+    width: 70%;
+    aspect-ratio: 1098 / 1308;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,13 +43,26 @@
 
 .polaroid-1 {
     background-image: url("../../assets/polaroid-1.png");
-    height: 15vh;
-    min-width: 100px;
+    width: 100%;
 }
 
 .polaroid-2 {
     background-image: url("../../assets/polaroid-2.png");
-    height: 18vh;
-    min-width: 110px;
-    
+    width: 120%;
+}
+
+.icon-keys {
+    position: absolute;
+    top: -.7em;
+    right: -.3em;
+    width: 1.6em;
+    height: auto;
+}
+
+.icon-heart {
+    display: inline-block;
+    height: 1.1em;
+    width: auto;
+    vertical-align: middle;
+    margin-left: .3em;
 }

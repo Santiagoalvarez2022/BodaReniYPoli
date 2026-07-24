@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"no-src \\(%{url_effective}\\): %{http_code}\\\\n\" \"http://localhost:5173/assets/photo_p3.png\")",
+      "Bash(curl -s -o /dev/null -w \"with-src: %{http_code}\\\\n\" \"http://localhost:5173/src/assets/photo_p3.png\")",
+      "Bash(curl -s -o /dev/null -w \"5174 no-src: %{http_code}\\\\n\" \"http://localhost:5174/assets/photo_p3.png\" --max-time 2)",
+      "Bash(curl -s -o /dev/null -w \"5174 with-src: %{http_code}\\\\n\" \"http://localhost:5174/src/assets/photo_p3.png\" --max-time 2)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s \"http://localhost:5173/src/components/thirdSection/thirdSection.css\")",
+      "Bash(curl -s -o /dev/null -w \"content-type: %{content_type}\\\\n\" \"http://localhost:5173/assets/photo_p3.png\")",
+      "Bash(curl -s \"http://localhost:5173/assets/photo_p3.png\")",
+      "Bash(powershell -Command \"Get-CimInstance Win32_Process -Filter \\\\\"Name='node.exe'\\\\\" | Select-Object ProcessId,CommandLine | Format-List\")",
+      "Bash(curl -s -o /dev/null -w \"content-type: %{content_type}, size: %{size_download}\\\\n\" \"http://localhost:5173/assets/photo_p3.png\")",
+      "Bash(node banner_shot2.js)",
+      "Bash(sed -i \"s/setTimeout\\(r, 400\\)/setTimeout\\(r, 3500\\)/\" banner_final.js)",
+      "Bash(node banner_final.js)"
+    ]
+  }
+}

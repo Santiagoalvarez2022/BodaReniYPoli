@@ -8,7 +8,7 @@ const ThirdSection = () => {
           <div>
               <div className="font-tangerine ps-6 text-msg">
                 <div className="ml-4 pb-2 border-t-2 border-petrol" />
-                <p> Ja tenemos gran parte de</p>
+                <p>Ya tenemos gran parte de</p>
                 <p>nuestra casita lísta,</p>
                 <p>pero si querés ayudarnos a</p>
                 <p>terminar de completarla,</p>

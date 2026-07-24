@@ -5,7 +5,6 @@ import Banner from './components/banner/Banner';
 import Label from './components/label/Label';
 import FormGuest from './components/formGuest/FormGuest';
 import Envelope from './components/envelope/Envelope';
-import Loader from './components/loader/Loader';
 import Cover from './components/cover/Cover';
 import SecondSection from './components/secondSection/SecondSection';
 import { getGuestList } from './service/guests.js';
@@ -15,7 +14,6 @@ import ThirdSection from './components/thirdSection/ThirdSection.jsx';
 const App = () => {
   const [guests, setGuests] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showEnvelope, setShowEnvelope] = useState(false);
 
   const fetchGuests = async () => {
     try {
@@ -30,15 +28,13 @@ const App = () => {
     const init = async () => {
       await fetchGuests();
       setLoading(false);
-      setShowEnvelope(true);
     };
     init();
   }, []);
 
   return (
     <div className='app-background flex flex-col items-center'>
-      {loading && <Loader />}
-      {showEnvelope && <Envelope />}
+      <Envelope loading={loading} />
       <Cover />
       <SecondSection />
       <ThirdSection />

@@ -27,7 +27,8 @@ export const getGuestList = async () => {
 
 export const confirmGuest = async (id) => {
   try {
-    const response = await axios.patch(`${SHEETBEST_URL}/${id}`, { Confirmo: CONFIRMED_STATUS });
+    const rowIndex = id - 1;
+    const response = await axios.patch(`${SHEETBEST_URL}/${rowIndex}`, { Confirmo: CONFIRMED_STATUS });
     return { status: response.status, data: response.data };
   } catch (error) {
     console.log('Error updating guest', error.message);

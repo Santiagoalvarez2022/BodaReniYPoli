@@ -4,7 +4,7 @@ export default function ErrorPage() {
       <h1 className="text-6xl font-bold text-red-500 mb-4">404</h1>
       <h2 className="text-2xl font-semibold mb-2">Ha ocurrido un error con el sitio web</h2>
       <p className="text-lg text-gray-600 mb-6 text-center">
-        Por favor, contacte a <span className="font-medium">Renata</span> y <span className="font-medium">Pablo Ullua</span>.
+        Por favor, contacte a <span className="font-medium">Milena</span> y <span className="font-medium">Joaquin</span>.
       </p>
       <a
         href="/"

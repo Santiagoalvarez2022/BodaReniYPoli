@@ -5,5 +5,7 @@
 
 .app-background {
   background-image: url("./assets/bgPaper.svg");
-  background-size: contain;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: top center;
 }

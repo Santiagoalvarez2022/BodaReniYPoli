@@ -1,0 +1,22 @@
+.farewell-tear {
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 55%, 92% 80%, 84% 50%, 76% 85%,
+    68% 55%, 60% 80%, 52% 45%, 44% 80%,
+    36% 50%, 28% 85%, 20% 55%, 12% 80%,
+    4% 45%, 0% 70%
+  );
+}
+
+
+.polaroid-3 {
+  aspect-ratio: 1098 / 1308;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/polaroid-3.png");
+}
+
+.icon-white-heart {
+  width: auto;
+}

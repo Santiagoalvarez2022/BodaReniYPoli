@@ -1,0 +1,68 @@
+.third-section-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10vh;
+}
+
+.banner-photo {
+  background-image: url("../../assets/photo_p3.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  aspect-ratio: 1080 / 773;
+}
+
+.text-images-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text-msg {
+  font-size: 1.8em;
+  font-weight: 700;
+  line-height: .9;
+}
+
+.leaf {
+  background-image: url("../../assets/leaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: -1.7em;
+  height: 11vh;
+}
+
+.polaroid {
+  width: 70%;
+  aspect-ratio: 1098 / 1308;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.polaroid-1 {
+  background-image: url("../../assets/polaroid-1.png");
+  width: 100%;
+}
+
+.polaroid-2 {
+  background-image: url("../../assets/polaroid-2.png");
+  width: 120%;
+}
+
+.icon-keys {
+  position: absolute;
+  top: -.7em;
+  right: -.3em;
+  width: 1.6em;
+  height: auto;
+}
+
+.icon-heart {
+  display: inline-block;
+  height: 1.1em;
+  width: auto;
+  vertical-align: middle;
+  margin-left: .3em;
+}

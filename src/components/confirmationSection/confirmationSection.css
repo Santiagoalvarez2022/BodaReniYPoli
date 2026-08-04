@@ -1,0 +1,32 @@
+.confirmation {
+  background-image: url("../../assets/confirmation_picture.svg");
+}
+
+.input-container {
+  display: flex;
+}
+.input-container > input {
+  width: 90%;
+}
+
+.input-icon-search {
+  width: 10%;
+}
+
+.options-container-guests {
+  overflow-y: scroll;
+  min-height: 20vh;
+  height: 20vh;
+  max-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 60;
+}
+
+.options-container-guests > li {
+  padding: .7em 2em .3em 2em ;
+  width: 100%;
+  border-bottom: .5px solid var(--color-petrol);
+  font-size: .9em;
+}

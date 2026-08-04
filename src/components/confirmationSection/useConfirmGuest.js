@@ -8,7 +8,8 @@ export function useConfirmGuest({ onSuccess }) {
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   const confirmGuest = async (guest) => {
-    if (!guest?.id) return;
+    console.debug("entre en la request ", guest)
+    if (guest?.id == null) return;
 
     try {
       setIsConfirming(true);

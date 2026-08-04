@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import App from './App.jsx'
 import ErrorPage from './components/error/ErrorPage.jsx';
+import PartyInfoPage from './components/partyInfoPage/PartyInfoPage.jsx';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/error",
     element: <ErrorPage />,
+  },
+  {
+    path: "/info-fiesta",
+    element: <PartyInfoPage />,
   },
 ]);
 

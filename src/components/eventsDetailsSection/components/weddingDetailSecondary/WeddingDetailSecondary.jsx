@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 const WeddingDetailSecondary = ({
   event,
   date,
@@ -8,6 +10,7 @@ const WeddingDetailSecondary = ({
   connectorGap = false,
   moreInfo = false,
 }) => {
+  const navigate = useNavigate();
   const line = connector
     ? `before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:w-px before:h-8 before:bg-petrol ${connectorGap ? 'before:mt-[10px]' : ''}`
     : "";
@@ -29,7 +32,7 @@ const WeddingDetailSecondary = ({
             </p>
             {moreInfo && (
               <button
-                onClick={() => window.open(link, "_blank")}
+                onClick={() => navigate('/info-fiesta')}
                 className="bg-petrol text-sand font-playfair text-xs tracking-wide rounded-full p-1 px-2 shadow"
               >
                 Mas info

@@ -17,7 +17,7 @@ const App = () => {
       const response = await getGuestList();
       if (response?.status === 200) setGuests(response.data);
     } catch (error) {
-      console.log('errorError al cargar la lista de invitados', error);
+      console.log('Error loading guest list', error);
     }
   };
 
@@ -37,7 +37,6 @@ const App = () => {
       <GiftRegistrySection />
       <ConfirmationSection guests={guests} refreshGuests={fetchGuests} />
       <ClosingMessageSection />
-      {console.log(guests)}
     </div>
   )
 }

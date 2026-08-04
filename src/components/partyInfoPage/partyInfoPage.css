@@ -1,0 +1,17 @@
+.party-info-body {
+  background-image: url("../../assets/bgPaper.svg");
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: top center;
+}
+
+.icon-leaft {
+  background-image: url("../../assets/leafCut.svg");
+  height: 10vh;
+  width: 10vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  right: 0;
+  top: 47%
+}

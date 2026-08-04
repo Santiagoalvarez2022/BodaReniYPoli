@@ -32,6 +32,7 @@ export default function EventsDetailsSection() {
           event={"Fiesta"}
           date={"Viernes 13 de Noviembre - 20:45hs"}
           link={"https://maps.app.goo.gl/2nBuGpXNnerzN1t69"}
+          address={"El palenque y Exaltación de la cruz"}
           logo={copas}
           connector={false}
           moreInfo

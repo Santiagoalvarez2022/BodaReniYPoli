@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import discoBall from '../../../../assets/discoBall.svg';
 import { PRICE_BY_TYPE } from '../../confirmationSection.constants.js';
+import AddToCalendar from '../../../shared/addToCalendar/AddToCalendar.jsx';
 
 export default function GuestConfirmationModal({ guest, isConfirming, isConfirmed, onConfirm, onClose }) {
   useEffect(() => {
@@ -61,9 +62,20 @@ export default function GuestConfirmationModal({ guest, isConfirming, isConfirme
 
         <p className="text-center text-[.7em] opacity-60  ">Menores de 12 años no abonan</p>
 
-        <div className="flex justify-center mt-5">
-          {isConfirmed ? (
-            <p className="font-playfair text-petrol text-[1.2em]">¡Invitación confirmada!</p>
+        <div className="flex justify-center mt-6">
+          {isConfirmed ? (<div className='flex flex-col'>
+            <p className="font-playfair text-petrol text-[1.5em]">¡Invitación confirmada!</p>
+            <AddToCalendar
+              title="Fiesta de casamiento de Milena y Joaquín"
+              description="¡Te esperamos en nuestro día especial!"
+              location="https://maps.app.goo.gl/2nBuGpXNnerzN1t69"
+              startDate="20261113T204500-0300"
+              endDate="20261114T030000-0300"
+              className="mt-4 flex justify-center "
+            >
+              <span className='border-b text-center'>Agendar Fecha</span>
+            </AddToCalendar>
+          </div>
           ) : isConfirming ? (
             <div
               className="h-[1.8em] w-[1.8em] rounded-full border-[3px] border-petrol/25 border-t-petrol animate-spin"

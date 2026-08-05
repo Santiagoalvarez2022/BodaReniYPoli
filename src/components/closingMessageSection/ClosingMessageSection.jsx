@@ -12,11 +12,10 @@ const ClosingMessageSection = () => {
       <div className="px-[2em] mt-5 text-center">
         <h2 className="font-tangerine text-white text-[5em] leading-none">¡Los esperamos!</h2>
         <div className="w-[55%] h-[1.5px] bg-white opacity-80 mt-[.4em] mx-auto mb-[1.2em]" />
-        <p className="font-baskerville text-sand text-[1.1em] leading-[1.6] ">
-          y recuerden…<br />
-          Mientras uno está vivo,<br />
-          uno debe amar<br />
-          lo mas que pueda
+        <p className="font-baskerville text-[1.1em] leading-[1.6] ">
+          <span className='text-sand'>y recuerden…</span><br />
+          <span className='text-white'>Mientras uno está vivo,</span><br />
+          <span className='text-white'>uno debe amar lo más que pueda!</span>
         </p>
       </div>
 

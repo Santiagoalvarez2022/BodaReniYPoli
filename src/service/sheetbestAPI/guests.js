@@ -21,7 +21,7 @@ export const getGuestList = async () => {
     return { status: response.status, data: pendingGuests };
   } catch (error) {
     console.log('Error fetching guest list', error.message);
-    return error;
+    return { status: error.response?.status ?? null, code: error.code, error: error.message };
   }
 };
 

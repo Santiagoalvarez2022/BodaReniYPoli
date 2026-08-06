@@ -48,7 +48,23 @@
       "Bash(grep -oE '\\\\.\\\\\\\\\\\\!w-\\\\\\\\\\\\[100px\\\\\\\\\\\\][^{]*\\\\{[^}]*\\\\}' dist/assets/index-*.css)",
       "Bash(grep -oE '\\\\.bg-petrol\\\\\\\\/50[^{]*\\\\{[^}]*\\\\}' dist/assets/index-*.css)",
       "Bash(rm -f src/components/confirmationSection/components/guestConfirmationModal/guestConfirmationModal.constants.js)",
-      "Bash(rm -rf src/components/confirmationSection/components/loader)"
+      "Bash(rm -rf src/components/confirmationSection/components/loader)",
+      "WebSearch",
+      "WebFetch(domain:docs.sheetbest.com)",
+      "WebFetch(domain:vercel.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(node seam.js)",
+      "Bash(node seam-zoom.js)",
+      "Bash(node seam-paper.js)",
+      "Bash(node seam-crop.js)",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(node seam-crop2.js)",
+      "Bash(node seam-verify.js)",
+      "Bash(node seam-symmetry.js)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\santiago\\AppData\\Local\\Temp\\pw-scratch"
     ]
   }
 }

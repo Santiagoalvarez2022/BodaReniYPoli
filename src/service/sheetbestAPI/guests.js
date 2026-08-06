@@ -13,7 +13,7 @@ const mapGuest = (row) => ({
 
 export const getGuestList = async () => {
   try {
-    const response = await axios.get(`${SHEETBEST_URL}?_raw=1`);
+    const response = await axios.get(`${SHEETBEST_URL}?_raw=1`, { timeout: 8000 });
     const pendingGuests = response.data
       .map(mapGuest)
       .filter((guest) => guest.confirmo?.toUpperCase() !== CONFIRMED_STATUS);

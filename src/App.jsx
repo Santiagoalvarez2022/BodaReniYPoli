@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className='app-background flex flex-col items-center'>
       {debugError && (
-        <div className='fixed top-0 left-0 right-0 z-50 bg-red-600 text-white text-xs p-2 break-words'>
+        <div className='fixed top-0 left-0 right-0 z-[60] bg-red-600 text-white text-xs p-2 break-words'>
           status: {String(debugError.status)} | code: {String(debugError.code)} | error: {String(debugError.error)}
         </div>
       )}

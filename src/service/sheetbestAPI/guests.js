@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SHEETBEST_URL = 'https://api.sheetbest.com/sheets/fbcae772-75e9-4fd1-a706-43c097de8ab7';
+const GUESTS_API_URL = '/api/guests';
 const CONFIRMED_STATUS = 'SI';
 
 const mapGuest = (row) => ({
@@ -13,7 +13,7 @@ const mapGuest = (row) => ({
 
 export const getGuestList = async () => {
   try {
-    const response = await axios.get(`${SHEETBEST_URL}?_raw=1`, { timeout: 20000 });
+    const response = await axios.get(GUESTS_API_URL, { timeout: 20000 });
     const pendingGuests = response.data
       .map(mapGuest)
       .filter((guest) => guest.confirmo?.toUpperCase() !== CONFIRMED_STATUS);
@@ -28,7 +28,7 @@ export const getGuestList = async () => {
 export const confirmGuest = async (id) => {
   try {
     const rowIndex = id - 1;
-    const response = await axios.patch(`${SHEETBEST_URL}/${rowIndex}`, { Confirmo: CONFIRMED_STATUS });
+    const response = await axios.patch(`${GUESTS_API_URL}/${rowIndex}`, { Confirmo: CONFIRMED_STATUS });
     return { status: response.status, data: response.data };
   } catch (error) {
     console.log('Error updating guest', error.message);

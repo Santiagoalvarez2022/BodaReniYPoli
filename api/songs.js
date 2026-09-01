@@ -1,4 +1,4 @@
-const SHEETBEST_URL = 'https://api.sheetbest.com/sheets/977170df-5892-4c17-be43-632de2780aac';
+const SHEETBEST_URL = 'https://api.sheetbest.com/sheets/3af8d85d-d22f-46bc-9fce-06ad08b0f112';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
